@@ -1,0 +1,52 @@
+Czwieczenie 1.
+1,2,3,4.
+var car = {
+  marka: "RenMobil", 
+  cena: "40",
+  moc: 300,
+  mocUp: function(x) 
+  {
+    car.moc = car.moc + x;
+  }
+  };
+
+console.log(car);
+car.mocUp(40);
+console.log(car);
+5.function CarCreate(marka,cena,moc) {
+  this.marka = marka;
+  this.cena = cena;
+  this.moc = moc;
+  
+}
+CarCreate.prototype.mocUp = function(x){
+  this.moc+=x;
+}
+6,7.
+var someCar1 = new CarCreate("BMW",40,500);
+var someCar2 = new CarCreate("Audi",50,45);
+var someCar3 = new CarCreate("Opel",550,600);
+var lista = [someCar1,someCar2,someCar3];
+for(let item of lista)
+{
+  console.log(item);
+}
+8.lista[1].mocUp(50);
+9.for(let item of lista)
+{
+  console.log(item);
+}
+10.Nie jest mozliwe,gdzies w JavaScripcie
+11,12.
+CarCreate.prototype.toString = function(x){
+  console.log("{Marka:"+this.marka +", cena:"+this.cena+", moc:"+this.moc+"}")
+}
+console.log(lista[2].toString());
+Czwiczenie 2.
+1.
+let myJson = JSON.stringify(someCar3);
+console.log(myJson);
+Metody znikneli
+2.
+let objekt = JSON.parse(myJson);
+console.log(objekt);

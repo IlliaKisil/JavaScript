@@ -1,0 +1,23 @@
+3.
+a)GET http://localhost:62161/api/Departments
+b)GET http://localhost:62161/api/Departments/2
+c)POST http://localhost:62161/api/Departments/
+{
+    "name": "MyDept"
+}
+d)GET http://localhost:62161/api/Departments/
+e)PUT http://localhost:62161/API/Departments/5
+
+{
+	"departmentId": 5,
+    "name": "New1_MyDept"
+}
+f)GET http://localhost:62161/api/Departments/
+g)DELETE 
+http://localhost:62161/API/Departments/5
+
+{
+	"departmentId": 5,
+    "name": "New1_MyDept"
+}
+h)GET http://localhost:62161/api/Departments/

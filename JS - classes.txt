@@ -1,0 +1,146 @@
+===========================
+CZWICZENIE 1,2.
+===========================
+class Osoba{
+  constructor(imie,wiek)
+  {
+    this.imie = imie
+    this.wiek = wiek
+  }
+  Przedstaw()
+  {
+    return "Jestem " + this.imie + ",mam " + this.wiek + " lat";
+  }
+}
+var person1 = new Osoba("Pawel",18);
+console.log(person1.Przedstaw());
+person1.imie = "Dog";
+person1.wiek = 21;
+console.log(person1.Przedstaw());
+
+class Pracownik extends Osoba
+{
+  constructor(imie,wiek,zawod)
+  {
+    super(imie,wiek)
+    this.zawod = zawod;
+  }
+  Przedstaw()
+  {
+    return super.Przedstaw() + " i pracuje jako "+this.zawod;
+  }
+}
+
+var person2 = new Pracownik("Marek",21,"rabotyaga");
+console.log(person2.Przedstaw());
+person2.imie = "Radoslaw";
+person2.wiek = 19;
+console.log(person2.Przedstaw());
+===========================
+CZWICZENIE 3.
+===========================
+class Osoba{
+  imie
+  wiek
+  set wiek(wiek) {this.wiek = wiek}
+  get wiek() {return this.wiek}
+  set imie(imie) {this.imie = imie}
+  get imie() {this.imie = imie} 
+  Przedstaw()
+  {
+    return "Jestem " + this.imie + ",mam " + this.wiek + " lat";
+  }
+}
+class Pracownik extends Osoba
+{
+  constructor(imie,wiek,zawod)
+  {
+    super(imie,wiek)
+    this.zawod = zawod;
+  }
+  Przedstaw()
+  {
+    return super.Przedstaw() + " i pracuje jako "+this.zawod;
+  }
+}
+var person3 = new Pracownik();
+person3.imie = "hi";
+peron3.wiek = 18;
+person3.zawod = "Rabotyaga";
+console.log(person3.zawod);
+
+Dziala poprawnie
+===========================
+CZWICZENIE 4.
+===========================
+class Osoba{
+  set Wiek(wiek) {this.wiek = wiek}
+  get Wiek() {return this.wiek}
+  set Imie(name) {this.imie = Osoba.formatujImie(name)}
+  get Imie() {return this.imie} 
+  static formatujImie(randomName){
+    return randomName.replace(randomName[0],randomName[0].toUpperCase())
+  }
+}
+var person = new Osoba();
+person.Imie = "marek";
+person.Wiek = 18;
+console.log(person.Imie);
+console.log(person.Imie);
+===========================
+CZWICZENIE 5,6.
+===========================
+class Osoba{
+  set Wiek(age) 
+  {
+    
+      if(Number.isInteger(age))
+      {
+        if(age < 0)
+        {
+          console.log("Chyba dodales minus");
+          throw new RangeError();
+        }
+        else
+        {
+          return this.wiek = age;
+        }
+      }
+      else
+      {
+        console.log("Podaj liczbe")
+        throw new TypeError();
+      }
+    
+    }
+  
+  get Wiek() {return this.wiek}
+  set Imie(name) {this.imie = Osoba.formatujImie(name)}
+  get Imie() {return this.imie} 
+  static formatujImie(randomName){
+    return randomName.replace(randomName[0],randomName[0].toUpperCase())
+  }
+}
+class Pracownik extends Osoba {
+    constructor(imie, wiek, praca) {
+        super();
+        super.imie = imie;
+        super.wiek = wiek;
+        this.praca = praca;
+    }
+    
+    Przedstaw() {
+        return super.Przedstaw() + " pracuje jako " + this.praca;
+    }
+}
+var person = new Osoba();
+person.Imie = "marek";
+
+try
+{
+  person.Wiek = 10;
+}catch(e){
+      console.log(e.name);
+}
+console.log(person.Imie);
+console.log(person.wiek);
